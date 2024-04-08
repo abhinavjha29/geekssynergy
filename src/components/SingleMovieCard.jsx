@@ -17,7 +17,7 @@ const SingleMovieCard = ({ movie }) => {
   } = movie;
 
   return (
-    <div class="card" style={{ width: "fit-content" }}>
+    <div class="card mb-5" style={{ width: "25rem" }}>
       <div class="card-body">
         <div class="container text-center">
           <div class="row">
@@ -27,7 +27,7 @@ const SingleMovieCard = ({ movie }) => {
             <div class="col-3 p-0">
               <img src={poster} alt={title} className="movie-poster" />
             </div>
-            <div class="col">
+            <div class="col text-start">
               <div class="fw-bold">{title}</div>
               <div className="d-flex line-div">
                 <p>genere :</p>
@@ -38,10 +38,9 @@ const SingleMovieCard = ({ movie }) => {
                 {director.join(", ")}
               </div>
               <div className="d-flex line-div">
-                <p>Starring :</p>
-                {stars.join(", ")}
+                Starring :{stars.join(", ")}
               </div>
-              <div className="d-flex line-div">
+              <div className="d-flex time">
                 {runTime} mins | {language} |{" "}
                 {new Date(releasedDate * 1000).toLocaleDateString()}
               </div>
@@ -61,53 +60,3 @@ const SingleMovieCard = ({ movie }) => {
 };
 
 export default SingleMovieCard;
-{
-  /* <Card style={{ width: "25rem" }}>
-      <Card.Body>
-        <Container className="d-flex">
-          <Row className="gx-0 ">
-            <Col xs="auto">
-              
-            </Col>
-            <Col xs="auto">
-              <Card.Img
-                variant="top"
-                src={poster}
-                alt={title}
-                className="movie-poster"
-              />
-            </Col>
-            <Col>
-              <Card.Title>{title}</Card.Title>
-            </Col>
-          </Row>
-          <Row className="gx-0 ">
-            <Col xs="auto">
-              <Card.Text>Genre: {genre}</Card.Text>
-            </Col>
-            <Col xs="auto">
-              <Card.Text>Director: {director.join(", ")}</Card.Text>
-            </Col>
-            <Col xs="auto">
-              <Card.Text>Starring: {stars.join(", ")}</Card.Text>
-            </Col>
-          </Row>
-          <Row className="gx-0 ">
-            <Col>
-              <Card.Text>
-                Time: {runTime} mins | Language: {language} | Release Date:{" "}
-                {new Date(releasedDate * 1000).toLocaleDateString()}
-              </Card.Text>
-            </Col>
-          </Row>
-          <Row className="gx-0">
-            <Col>
-              <Card.Text>
-                Views: {pageViews} | Voting: {voting} people
-              </Card.Text>
-            </Col>
-          </Row>
-        </Container>
-      </Card.Body>
-    </Card> */
-}
